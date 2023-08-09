@@ -6,6 +6,8 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <% for (let i = 0; i < messages.length; i++) { %>
+    <p><%= messages[i].added %> - <%= messages[i].user %>: <%= messages[i].text %></p>
+    <% } %>
   </body>
 </html>
