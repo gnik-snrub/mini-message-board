@@ -6,6 +6,7 @@
   </head>
   <body>
     <h1><%= title %></h1>
+    <a href="/new"><button>New message!</button></a>
     <% for (let i = 0; i < messages.length; i++) { %>
     <p><%= messages[i].added %> - <%= messages[i].user %>: <%= messages[i].text %></p>
     <% } %>
