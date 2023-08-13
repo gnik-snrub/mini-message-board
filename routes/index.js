@@ -1,18 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const messages = [
-  {
-    text: 'Hi there!',
-    user: 'Amando',
-    added: new Date()
-  },
-  {
-    text: 'Hello World!',
-    user: 'Charles',
-    added: new Date()
-  },
-]
+require('dotenv').config()
+
+const mongoose = require('mongoose')
+mongoose.set('strictQuery', false)
+const mongoDB = process.env.CONNECTION_STRING
+
+main().catch((err) => console.log(err))
+async function main() {
+  await mongoose.connect(mongoDB)
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
